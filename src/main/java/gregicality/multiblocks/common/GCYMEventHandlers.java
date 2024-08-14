@@ -6,6 +6,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import org.jetbrains.annotations.ApiStatus;
 
+import gregtech.api.GregTechAPI;
+import gregtech.api.metatileentity.registry.MTEManager;
 import gregtech.api.unification.material.event.MaterialEvent;
 import gregtech.api.unification.material.event.PostMaterialEvent;
 
@@ -20,6 +22,11 @@ import gregicality.multiblocks.api.unification.properties.AlloyBlastPropertyAddi
 public final class GCYMEventHandlers {
 
     private GCYMEventHandlers() {}
+
+    @SubscribeEvent
+    public static void registerMTERegistry(MTEManager.MTERegistryEvent event) {
+        GregTechAPI.mteManager.createRegistry(GregicalityMultiblocks.MODID);
+    }
 
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void registerMaterials(MaterialEvent event) {
