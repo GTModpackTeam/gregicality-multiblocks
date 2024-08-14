@@ -15,11 +15,11 @@ public final class GCYMRecipeMaps {
                     .fluidInputs(3)
                     .fluidOutputs(1)
                     .itemSlotOverlay(GuiTextures.FURNACE_OVERLAY_1, false)
-                    .itemSlotOverlay(GuiTextures.FURNACE_OVERLAY_1, false)
-                    .itemSlotOverlay(GuiTextures.FURNACE_OVERLAY_2, false)
-                    .itemSlotOverlay(GuiTextures.FURNACE_OVERLAY_2, false)
-                    .itemSlotOverlay(GuiTextures.FURNACE_OVERLAY_2, false)
-                    .itemSlotOverlay(GuiTextures.FURNACE_OVERLAY_2, false, true)
+                    .itemSlotOverlay(GuiTextures.FURNACE_OVERLAY_1, false, true)
+                    .fluidSlotOverlay(GuiTextures.FURNACE_OVERLAY_2, false)
+                    .fluidSlotOverlay(GuiTextures.FURNACE_OVERLAY_2, false, true)
+                    .fluidSlotOverlay(GuiTextures.FURNACE_OVERLAY_2, true)
+                    .fluidSlotOverlay(GuiTextures.FURNACE_OVERLAY_2, true, true)
                     .sound(GTSoundEvents.FURNACE)
                     .build();
 
