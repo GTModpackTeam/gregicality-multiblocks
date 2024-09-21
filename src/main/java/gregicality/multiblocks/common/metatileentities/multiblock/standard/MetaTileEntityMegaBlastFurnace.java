@@ -35,8 +35,8 @@ import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.recipes.logic.OCParams;
 import gregtech.api.recipes.logic.OCResult;
-import gregtech.api.recipes.recipeproperties.IRecipePropertyStorage;
-import gregtech.api.recipes.recipeproperties.TemperatureProperty;
+import gregtech.api.recipes.properties.RecipePropertyStorage;
+import gregtech.api.recipes.properties.impl.TemperatureProperty;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.TextComponentUtil;
@@ -272,9 +272,9 @@ public class MetaTileEntityMegaBlastFurnace extends GCYMRecipeMapMultiblockContr
 
         @Override
         protected void runOverclockingLogic(@NotNull OCParams ocParams, @NotNull OCResult ocResult,
-                                            @NotNull IRecipePropertyStorage propertyStorage, long maxVoltage) {
+                                            @NotNull RecipePropertyStorage propertyStorage, long maxVoltage) {
             heatingCoilOC(ocParams, ocResult, maxVoltage, ((IHeatingCoil) metaTileEntity).getCurrentTemperature(),
-                    propertyStorage.getRecipePropertyValue(TemperatureProperty.getInstance(), 0));
+                    propertyStorage.get(TemperatureProperty.getInstance(), 0));
         }
     }
 }
